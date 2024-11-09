@@ -1,0 +1,101 @@
+:root {
+  --background: #1E252E;
+  --text-color: #BAD9EC;
+  --border: #57C3E7;
+  --hover: #00A3E0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Fredoka", Sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-color);
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  margin: 0;
+}
+
+a {
+  color: var(--text-color);
+}
+
+.card {
+  max-width: 800px;
+  background-color: --border;
+  border: 1px solid #3a344e;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px auto;
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+body.loaded .slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-link {
+  transition: transform 0.3s ease;
+  display: inline-block;
+  float: right;
+  padding:3px;
+}
+
+.social-link:hover {
+  color: var(--hover);
+  transform: translateY(-3px);
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--text-color);
+  margin-right: 10px;
+  object-fit: cover;
+  padding: 3px;
+}
+
+#title::before {
+    position: absolute;
+    content: "Fr1zeen";
+    transform: translate(-3px, -3px);
+    color: white;
+    z-index: 2;
+    text-shadow: 3px 3px 0 lightgray;
+}
+
+#title::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    content: "Fr1zeen";
+    transform: translate(30px, 2px);
+    color: darkgray;
+    z-index: -1;
+    text-shadow: 3px 3px 0 gray;
+}
