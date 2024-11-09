@@ -20,23 +20,23 @@
     <p style="text-align:center;">Never</p>
     <div class="card">
     <h2>What even is Me1ted?</h2>
-    <p>Me1ted is a newly-discovered exploit that can unenroll an enterprise enrolled Chromebook. This exploit uses RMA shims, which is only intended for use by manufacturers and repair shops, but were leaked. By using this exploit, we can boot into developer mode, enter recovery and boot off of the shim USB like it was a recovery image. Since Google left a rootfs vulnerability unpatched, we were able to run unsigned code; and therefore unenrollment.
+    <p>Me1ted is a newly-discovered exploit made by v3rtual, ol.io, and fanqyxl. It unenrolls and removes enterprise enrollment from your chromebook. One day, me and Assaf Lotz were searching through commit code and found a bug that lets you modify the UEFI setting that ships out of the box on all chromebooks. This would also allow us to boot into dev mode, despite being unenrolled. It uses S3CRET RMA shims to boot into sh1mmer, load unverified javascript files when the firewall is disabled. This allows us to change the chromebooks serial number stored in ram. Once this is done, your chromebook can no longer report back to the google admin console, and is free to be used as your own.
 </p>
 
     </div>
     <div class="card">
       <h2>Okay, so, how did you find Me1ted?</h2>
-      <p>Even though Google has patched unenrollment, the new exploit was discovered by a group of ethical hackers during a routine security audit of school Chromebooks. The hackers identified a vulnerability in the update-engine that could be exploited to remove enterprise enrollment, leading to the creation of the exploit. The exploit uses RMA shims to manipulate update-engine to allow for unenrollment when rebooting back into ChromeOS.
+      <p>One restless night searching through kv7 and v230 commit code, we found this piece of code that intruiged me and  Assaf Lotz. "+/* Returns TRUE if FWMP is allowed to be updated in the current state */+static BOOL fwmp_update_allowed(void)" What this would allow us to do is once we take out the ram, this would let us set GBB flags and disable WP by remotely bridging pins 3 and 8 on the rom chip. As some of you may know, a lot of people had bricked their chromebooks trying to bridge these pins while using the retarted pencil method. Luckily opening up your chromebook is not needed anymore, as this all happens automatically.
 </p>
     </div>
     <div class="card">
       <h2>What are the requirements for Me1ted?</h2>
       <ol>
         <li>A brain</li>
-        <li>An enterprise enrolled chromebook with a working leaked RMA shim</li>
+        <li>An enterprise enrolled chromebook with a working leaked manufactured shim</li>
         <li>Access to an image flasher like <a href="https://chromewebstore.google.com/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm?hl=en&pli=1" target="_blank">Chromebook Recovery Utility
         </a></li>
-        <li>A USB flash drive with at least 8TB of storage</li>
+        <li>A NVME storage drive with at least 512gb of storage</li>
       </ol>
     </div>
     <div class="card">
@@ -48,14 +48,14 @@
     <div class="card">
       <h2>Notes:</h2>
       <p>
-        We are still experimenting with the exploit and testing it for bugs. Yes, this does work on devices with a TI50 chip.
+        We are still experimenting with the hackers and testing it for bugs. Yes, this does work on devices on kv10 and v230.
       </p>
     </div>
     <div class="card">
       <h2>Credits:</h2>
       <ol>
-        <li><a href="https://discord.com/users/1297715347427692554" target="_blank">pddevv</a></li>
-        <li><a href="https://iamsurvivor.vercel.app/" target="_blank">Survivor</a></li>
+        <li><a href="piss@in.you" target="_blank">Horeg Bin-Zona</a></li>
+        <li><a href="https://iamsurvivor.vercel.app/" target="_blank">fanqyxl</a></li>
         <li><a href="https://discord.com/users/1162193398879502336">Doxr</a></li>
         <li><a href="https://discord.com/users/758049822409228348">Byte</a></li>
         <li><a href="https://discord.com/users/896525651014721607">Alex</a></li>
